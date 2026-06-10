@@ -1,0 +1,36 @@
+info:
+  namespace: tu_pack   # ← cambia si tu carpeta tiene otro nombre
+
+font_images:
+  negro1:
+    path: font/negro_1.png
+    scale_ratio: 360
+    y_position: 120
+  negro2:
+    path: font/negro_2.png
+    scale_ratio: 360
+    y_position: 120
+  negro3:
+    path: font/negro_3.png
+    scale_ratio: 360
+    y_position: 120
+  negro4:
+    path: font/negro_4.png
+    scale_ratio: 360
+    y_position: 120
+  negro5:
+    path: font/negro_5.png
+    scale_ratio: 360
+    y_position: 120
+  negro6:
+    path: font/negro_6.png
+    scale_ratio: 360
+    y_position: 120
+  negro7:
+    path: font/negro_7.png
+    scale_ratio: 360
+    y_position: 120
+  blanco1:
+    path: font/blanco_1.png
+    scale_ratio: 360
+    y_position: 120
