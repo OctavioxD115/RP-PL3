@@ -10,13 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Create ZIP
-        run: zip -r generated.zip . -x "*.github*" -x "*.git*" -x "README*"
+        run: zip -r generated.zip . -x "*/.github/*" -x "*/.git/*" -x "README*"
+
+      - name: Delete old release
+        run: gh release delete latest --yes || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
           name: Resource Pack
