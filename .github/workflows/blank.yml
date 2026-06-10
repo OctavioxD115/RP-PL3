@@ -1,0 +1,25 @@
+name: Build Resource Pack
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Create ZIP
+        run: zip -r generated.zip . -x "*.github*" -x "*.git*" -x "README*"
+
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: latest
+          name: Resource Pack
+          files: generated.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
